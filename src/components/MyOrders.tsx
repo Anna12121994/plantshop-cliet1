@@ -28,7 +28,7 @@ function MyOrders({ isLoggedIn, refreshKey }: Props) {
     const token = localStorage.getItem('token')
     if (!token) return
 
-    const response = await fetch('https://localhost:7016/api/orders/my', {
+    const response = await fetch('https://anna0604-001-site1.ktempurl.com/api/orders/my', {
       headers: {
         Authorization: `Bearer ${token}`
       }

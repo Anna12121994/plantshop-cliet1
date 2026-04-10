@@ -12,7 +12,7 @@ function LoginModal({ isOpen, onClose, onLoginSuccess, showMessage }: Props) {
   const [password, setPassword] = useState('')
 
   const handleLogin = async () => {
-    const response = await fetch('https://localhost:7016/api/auth/login', {
+    const response = await fetch('https://anna0604-001-site1.ktempurl.com/api/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password })

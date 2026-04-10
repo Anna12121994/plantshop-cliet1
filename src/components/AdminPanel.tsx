@@ -90,7 +90,7 @@ function AdminPanel({ onProductAdded, showMessage }: Props) {
     let response
 
     if (editingId === null) {
-      response = await fetch('https://localhost:7016/api/products', {
+      response = await fetch('https://anna0604-001-site1.ktempurl.com/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ function AdminPanel({ onProductAdded, showMessage }: Props) {
         body: JSON.stringify(productData)
       })
     } else {
-      response = await fetch(`https://localhost:7016/api/products/${editingId}`, {
+      response = await fetch(`https://anna0604-001-site1.ktempurl.com/api/products/${editingId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ function AdminPanel({ onProductAdded, showMessage }: Props) {
   }
 
   const handleDeleteProduct = async (id: number) => {
-    const response = await fetch(`https://localhost:7016/api/products/${id}`, {
+    const response = await fetch(`https://anna0604-001-site1.ktempurl.com/api/products/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`

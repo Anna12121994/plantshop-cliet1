@@ -12,7 +12,7 @@ function RegisterModal({ isOpen, onClose, showMessage }: Props) {
   const [password, setPassword] = useState('')
 
   const handleRegister = async () => {
-    const response = await fetch('https://localhost:7016/api/auth/register', {
+    const response = await fetch('https://anna0604-001-site1.ktempurl.com/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ userName, email, password })

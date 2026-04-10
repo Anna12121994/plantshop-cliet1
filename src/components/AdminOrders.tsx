@@ -33,7 +33,7 @@ function AdminOrders({ isAdmin }: Props) {
 
     if (!token) return
 
-    const response = await fetch('https://localhost:7016/api/orders/all', {
+    const response = await fetch('https://anna0604-001-site1.ktempurl.com/api/orders/all', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -59,7 +59,7 @@ function AdminOrders({ isAdmin }: Props) {
   const handleDeliver = async (orderId: number) => {
     const token = localStorage.getItem('token')
 
-    const response = await fetch(`https://localhost:7016/api/orders/${orderId}/deliver`, {
+    const response = await fetch(`https://anna0604-001-site1.ktempurl.com/api/orders/${orderId}/deliver`, {
       method: 'PUT',
       headers: {
         Authorization: `Bearer ${token}`
