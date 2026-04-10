@@ -50,7 +50,7 @@ function ProductsList({
   }
 
   useEffect(() => {
-    fetch(`https://localhost:7184/api/products?search=${search}&category=${category}&sortBy=${sortBy}&page=${page}&pageSize=6`)
+    fetch(`https://localhost:7016/api/products?search=${search}&category=${category}&sortBy=${sortBy}&page=${page}&pageSize=6`)
       .then(res => res.json())
       .then((data: ProductsResponse) => {
         setProducts(data.items)
@@ -67,7 +67,7 @@ function ProductsList({
       return
     }
 
-    const response = await fetch('http://anna0604-001-site1.ktempurl.com/api/orders/cart/add', {
+    const response = await fetch('https://localhost:7016/api/orders/cart/add', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
