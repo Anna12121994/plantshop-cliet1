@@ -32,13 +32,8 @@ function App() {
     }, 2500)
   }
 
-  const getToken = () => {
-    const token = localStorage.getItem('token')
-    return token ? token.replace(/^"|"$/g, '') : null
-  }
-
   const checkAdminRole = () => {
-    const token = getToken()
+    const token = localStorage.getItem('token')
 
     if (!token) {
       setIsAdmin(false)
@@ -86,7 +81,6 @@ function App() {
       return
     }
 
-    setIsCartOpen(true)
   }
 
   useEffect(() => {

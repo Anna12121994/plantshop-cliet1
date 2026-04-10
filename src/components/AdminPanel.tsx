@@ -40,13 +40,13 @@ function AdminPanel({ onProductAdded, showMessage }: Props) {
   const token = localStorage.getItem('token')
 
  const loadProducts = async () => {
-  const response = await fetch('http://anna0604-001-site1.ktempurl.com/api/products?page=1&pageSize=100')
+  const response = await fetch('https://localhost:7184/api/products?page=1&pageSize=100')
   const data = await response.json()
   setProducts(data.items)
 }
 
   const loadUsers = async () => {
-    const response = await fetch('http://anna0604-001-site1.ktempurl.com/api/users', {
+    const response = await fetch('https://localhost:7184/api/users', {
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -90,7 +90,7 @@ function AdminPanel({ onProductAdded, showMessage }: Props) {
     let response
 
     if (editingId === null) {
-      response = await fetch('http://anna0604-001-site1.ktempurl.com/api/products', {
+      response = await fetch('https://localhost:7184/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ function AdminPanel({ onProductAdded, showMessage }: Props) {
         body: JSON.stringify(productData)
       })
     } else {
-      response = await fetch(`http://anna0604-001-site1.ktempurl.com/api/products/${editingId}`, {
+      response = await fetch(`https://localhost:7184/api/products/${editingId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ function AdminPanel({ onProductAdded, showMessage }: Props) {
   }
 
   const handleDeleteProduct = async (id: number) => {
-    const response = await fetch(`http://anna0604-001-site1.ktempurl.com/api/products/${id}`, {
+    const response = await fetch(`https://localhost:7184/api/products/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`
