@@ -84,7 +84,7 @@ function CartPanel({
     const token = getToken()
     if (!token) return
 
-    const response = await fetch('https://anna0604-001-site1.ktempurl.com/api/orders/cart/pay', {
+    const response = await fetch('http://anna0604-001-site1.ktempurl.com/api/orders/cart/pay', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`
